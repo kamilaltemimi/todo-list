@@ -1,0 +1,30 @@
+<div class="search-option-container">
+  <mat-form-field class="search-option-container-filter">
+    <input (input)="filterList($event)" matInput placeholder="Search by title">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Sort by</mat-label>
+    <mat-select (selectionChange)="sortByPriority($event.value)">
+      <mat-option value="HighLow">Priority: High to Low</mat-option>
+      <mat-option value="LowHigh">Priority: Low to High</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div  class="list-container">
+  <mat-list *ngFor="let task of filteredList" class="list" role="list">
+
+      <mat-list-item role="listitem">
+        <div class="list-task-row">
+          <div class="list-task-row-title">{{task.title}}</div>
+          <div class="list-task-row-priority">{{task.priority}}</div>
+          <div class="list-task-row-status">{{task.status}}</div>
+          <div class="list-task-row-duedate">{{task.dueDate | date}}</div>
+          <button mat-raised-button (click)="displayTaskDetails('200ms', '200ms', task)">Details</button>
+          <button (click)="deleteTask(task.id!)" mat-flat-button color="warn">Delete</button>
+        </div>
+      </mat-list-item>
+
+  </mat-list>
+</div>

@@ -1,0 +1,65 @@
+.search-option-container {
+  width: 700px;
+  display: flex;
+}
+
+.search-option-container-filter{
+  margin-right: 10px;
+}
+
+.list-container {
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  padding: 10px;
+  max-height: 560px;
+  overflow-y: scroll;
+}
+
+.list {
+  width: 900px;
+  background-color: rgb(234, 234, 234);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  height: 70px;
+  
+  &:hover {
+    background-color:  rgb(227, 227, 227);
+  }
+}
+
+.list-task-row {
+  width: 850px;
+  min-height: 50px;
+  max-height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.list-task-row-title{
+  width: 200px;
+  max-height: 50px;
+  text-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.list-task-row-description {
+  width: 200px;
+}
+
+.list-task-row-priority {
+  width: 20px;
+}
+
+.list-task-row-status {
+  width: 100px;
+}
+
+.list-task-row-duedate {
+  width: 100px;
+}
+

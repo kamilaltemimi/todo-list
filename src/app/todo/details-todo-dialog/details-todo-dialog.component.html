@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="header">
+    <p class="todo-title" mat-dialog-title>{{data.title}}</p>
+  </div>
+  <mat-dialog-content>
+    <div class="dialog-header-row">
+      <div class="dialog-header">
+        <div class="dialog-header-column-title">
+          <h2>Task status</h2>
+          <p>{{data.status}}</p>
+        </div> 
+        <div class="dialog-header-column-priority">
+          <h2>Priority</h2>
+          <p>{{data.priority}}</p>
+        </div>
+        <div class="dialog-header-column-duedate">
+          <h2>Due date</h2>
+          <p>{{data.dueDate | date}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialog-content-description">
+      {{data.description}}
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="button-container">
+      <div class="button-container-row">
+        <button (click)="editTask(data.id)" mat-dialog-close mat-flat-button color="accent">Edit</button>
+        <button mat-flat-button mat-dialog-close color="warn">Close</button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+
+</div>

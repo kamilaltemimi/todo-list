@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="content">
+    <div class="content-header">
+      <mat-tab-group [selectedIndex]="tabIndex" (selectedTabChange)="changeTab($event)" animationDuration="500ms">
+        <mat-tab label="Lista"></mat-tab>
+        <mat-tab label="Dodaj"></mat-tab>
+      </mat-tab-group>
+    </div>
+
+    <div *ngIf="tabIndex === 0">
+      <app-todo-list></app-todo-list>
+    </div>
+
+    <div *ngIf="tabIndex === 1">
+      <app-todo-add
+      (onCompletedTaskAdd)="setTheTab($event)"></app-todo-add>
+    </div>
+
+  </div>
+</div>

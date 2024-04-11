@@ -1,0 +1,56 @@
+h2 {
+  margin: 0;
+}
+
+.todo-title {
+  color: rgb(203, 203, 203);
+}
+
+.container {
+  height: 480px;
+  background-color: rgb(39, 39, 39);
+}
+
+.header {
+  font-size: 26px;
+  color: rgb(249, 249, 249);
+  height: 50px;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(203, 203, 203);
+  border-radius: 10px;
+}
+
+.dialog-header-column-title, .dialog-header-column-priority, .dialog-header-column-duedate {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-content-description {
+  width: 632px;
+  height: 210px;
+  overflow-y: scroll;
+  margin-top: 10px;
+  background-color:rgb(203, 203, 203);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 700px;
+}
+
+.button-container-row {
+  width: 652px;
+  display: flex;
+  justify-content: right;
+}

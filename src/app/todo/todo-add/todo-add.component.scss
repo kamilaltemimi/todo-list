@@ -1,0 +1,23 @@
+.form-column {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(234, 234, 234);
+  padding: 20px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.form-row {
+  display: flex;
+  width: 700px;
+  justify-content: space-between;
+}
+
+.input-description {
+  width: 700px;
+  height: 200px;
+}
+
+.submit-button {
+  width: 700px;
+}

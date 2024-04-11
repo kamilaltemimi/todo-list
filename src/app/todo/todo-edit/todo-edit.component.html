@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="form-container">
+    <form (ngSubmit)="editTask()" [formGroup]="todoEditForm">
+
+      <div class="form-column">
+        <div class="form-row">
+
+          <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input 
+              formControlName="title"
+              maxlength="20"
+              matInput
+              #input>
+            <mat-hint>Max length: {{input.value.length}}/20</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Priority</mat-label>
+              <mat-select
+              formControlName="priority">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+              </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Due date</mat-label>
+            <input
+            formControlName="dueDate"
+            matInput 
+            [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+
+        <mat-form-field>
+          <mat-label>Task status</mat-label>
+            <mat-select
+            formControlName="status">
+              <mat-option value="completed">Completed</mat-option>
+              <mat-option value="in progress">In progress</mat-option>
+              <mat-option value="failed">Failed</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="input-description">
+          <mat-label>Description</mat-label>
+          <input 
+            formControlName="description"
+            matInput>
+        </mat-form-field>
+        
+        <p *ngIf="!todoEditForm.get('title')?.valid && todoEditForm.get('title')?.touched">
+          Please enter a valid username!
+        </p>
+
+        <p *ngIf="!todoEditForm.get('priority')?.valid && todoEditForm.get('priority')?.touched">
+          Please enter a valid priority!
+        </p>
+
+        <p *ngIf="!todoEditForm.get('dueDate')?.valid && todoEditForm.get('dueDate')?.touched">
+          Please enter a valid due date!
+        </p>
+
+        <p *ngIf="!todoEditForm.get('description')?.valid && todoEditForm.get('description')?.touched">
+          Please enter a valid description!
+        </p>
+
+        <button class="submit-button" [disabled]="!todoEditForm.valid" mat-flat-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
