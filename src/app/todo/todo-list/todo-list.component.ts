@@ -43,12 +43,13 @@ export class TodoListComponent implements OnInit {
   }
 
   deleteTask(id: string): void{
-    this.todoService.deleteTask(id).subscribe({next:() => this.todoService.getTodoTasks().subscribe(
-        data => {
-        this.todoList = data 
-        this.filteredList = data
-      })
+    this.todoService.deleteTask(id).subscribe(() => this.todoService.getTodoTasks()
+    .subscribe(
+      data => {
+      this.todoList = data 
+      this.filteredList = data
     })
+    )
   }
 
   displayTaskDetails(enterAnimationDuration: string, exitAnimationDuration: string, task: Task): void {
